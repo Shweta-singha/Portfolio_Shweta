@@ -1,6 +1,64 @@
 import { useEffect, useState } from "react";
 import "./index.css";
 
+const projects = [
+  {
+    title: "NexusHR – AI-Enabled Enterprise HR Platform",
+    desc: "Full-stack HR platform covering employee and department management, real-time attendance, leave and payroll. Includes a RAG-based HR policy chatbot (PgVector + Gemini API) and an ML attrition-prediction model that surfaces at-risk employees.",
+    metrics: [
+      "JWT + Argon2id, refresh-token rotation",
+      "Role-based access & audit trail",
+      "Real-time attendance via SSE",
+    ],
+    tech: ["Java 21", "Spring Boot", "PostgreSQL", "Redis", "React", "TypeScript", "RAG", "Docker"],
+    live: "https://nexus-hr-gilt.vercel.app/",
+    code: "https://github.com/Shweta-singha/NexusHR",
+  },
+  {
+    title: "Placement Record Management System (PRMS)",
+    desc: "Production placement portal for IIIT Guwahati with four role-based portals. Features a RAG-based resume–JD skills-gap analyzer built as an independent FastAPI microservice, Google Sheets ingestion and a real-time analytics dashboard.",
+    metrics: [
+      "4 portals with RBAC & JWT auth",
+      "LLM-powered skills-gap recommendations",
+      "Deployed in production with Docker",
+    ],
+    tech: ["Java", "Spring Boot", "Python", "FastAPI", "RAG", "React", "MySQL", "Gemini API"],
+    live: "https://www.prmsportal.com/login",
+    code: "https://github.com/Shweta-singha/PlacementManagementSystem",
+  },
+  {
+    title: "AI-Powered EHS Risk Intelligence Platform",
+    desc: "Construction-safety risk platform built on 4,470 real OSHA accident records. Classifies incident severity, explains predictions with SHAP, and uses a RAG agent to draft compliance recommendations for safety officers.",
+    metrics: [
+      "NLP + Random Forest / Logistic Regression",
+      "SHAP explainability",
+      "Natural-language Streamlit dashboard",
+    ],
+    tech: ["Python", "scikit-learn", "LangGraph", "RAG", "Gemini API", "Streamlit"],
+    live: "https://ai-powered-ehs-risk-intelligence-platform-uj3sgtyzc6muhnwyrkoz.streamlit.app/",
+    code: "https://github.com/Shweta-singha/AI-Powered-EHS-Risk-Intelligence-Platform",
+  },
+  {
+    title: "CampusX IIITG – One Platform for Everything IIITG",
+    desc: "Campus platform consolidating ride-sharing, a marketplace, lost & found, event management and an exam calendar for students, faculty and admins. Microservices on Spring Cloud Gateway, with a Python RAG chatbot over exams, events and PYQs.",
+    metrics: [
+      "Centralized JWT, rotating refresh tokens, RBAC",
+      "Atomic concurrency protection for bookings",
+      "240+ automated tests, Docker Compose",
+    ],
+    tech: ["Java 21", "Spring Boot 3", "Spring Cloud Gateway", "MongoDB", "React", "Python", "RAG", "Docker"],
+  },
+];
+
+const skills = [
+  ["Languages", ["Java", "Python", "SQL", "JavaScript (ES6+)"]],
+  ["AI / ML", ["Machine Learning", "NLP", "Generative AI", "RAG", "LLM Integration (Gemini API)", "scikit-learn"]],
+  ["Backend", ["Spring Boot", "REST APIs", "FastAPI", "JWT Authentication", "Microservices"]],
+  ["Frontend", ["React", "TypeScript", "Vite", "Responsive Design"]],
+  ["Database", ["MySQL", "PostgreSQL", "MongoDB", "Redis"]],
+  ["Tools & Deployment", ["Docker", "Vercel", "Git/GitHub", "Postman", "Swagger/OpenAPI"]],
+];
+
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("about");
@@ -48,24 +106,21 @@ function App() {
           />
 <div>
   <h2 className="name">M Shweta Singha</h2>
-  <p className="role">MERN Full Stack Developer</p>
+  <p className="role">Full Stack &amp; AI Developer</p>
 </div>
 </div>
 
 {!scrolled && (
   <div className="nav-center">
     <p className="summary">
-      MERN Full Stack Developer skilled in building scalable web applications,
-      designing REST APIs, and developing responsive user interfaces with React.
-      Experienced in authentication systems, real-time features, and clean,
-      maintainable code.
+      Full Stack &amp; AI Developer building scalable web applications with Java, Spring Boot and React, plus RAG and LLM-powered features. Experienced in secure REST APIs, JWT authentication, microservices and production deployment.
     </p>
   </div>
 )}
 
         <div className="nav-right">
           <a href="mailto:iamshweta.singha@gmail.com">Email</a>
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Shweta-singha" target="_blank" rel="noreferrer">
             GitHub
           </a>
           <a
@@ -118,10 +173,7 @@ function App() {
             <div id="about" className="resume-section">
               <h2>About Me</h2>
               <p>
-                M.Tech Computer Science student at IIIT Guwahati with hands-on
-                experience in full-stack web development. Strong interest in
-                frontend engineering, UI/UX design, and building scalable,
-                performance-optimized web applications.
+                M.Tech Computer Science student at IIIT Guwahati with hands-on experience building full-stack, AI-enabled applications. Strong interest in backend engineering with Java and Spring Boot, microservices, and applying RAG and machine learning to real-world problems.
               </p>
             </div>
 
@@ -134,7 +186,7 @@ function App() {
                 <br />
                 M.Tech – Computer Science & Engineering (2025 – 2027)
                 <br />
-                CGPA: 7.82
+                CGPA: 7.95
               </p>
 
               <p>
@@ -150,9 +202,21 @@ function App() {
             <div id="experience" className="resume-section">
               <h2>Experience</h2>
               <p>
-                <strong>Hireginie Talent Cloud Pvt Ltd</strong> (Dec 2025 – Present)
+                <strong>Zidio Development Pvt. Ltd.</strong> (May 2026 – Jul 2026)
                 <br />
-                Founder’s Office Intern (Remote)
+                Java Full Stack Development Intern (Remote)
+                <br />
+                Built NexusHR with Java, Spring Boot, React and PostgreSQL —
+                REST APIs, authentication workflows, testing and architecture
+                documentation.
+              </p>
+              <p>
+                <strong>Hireginie Talent Cloud Pvt Ltd</strong> (Dec 2025 – Jan 2026)
+                <br />
+                Founder’s Office Intern – Strategy &amp; Growth (Remote)
+                <br />
+                Business analysis, market research and Excel dashboards for
+                stakeholder reporting.
               </p>
             </div>
 
@@ -173,192 +237,68 @@ function App() {
               </p>
             </div>
 
-            {/* PROJECTS */} 
-<div id="projects" className="resume-section">
-  <h2>Projects</h2>
+            {/* PROJECTS */}
+            <div id="projects" className="resume-section">
+              <h2>Projects</h2>
 
-  <div className="projects-grid">
+              <div className="projects-grid">
+                {projects.map((p) => (
+                  <div className="project-card" key={p.title}>
+                    <h3>{p.title}</h3>
+                    <p className="project-desc">{p.desc}</p>
 
-    {/* Project 1 */}
-    <div className="project-card">
-      <h3>Digital Banking Transaction Platform</h3>
-      <p className="project-desc">
-        Built a secure full-stack banking application supporting fund transfers, account management, and transaction tracking with robust authentication.
-      </p>
+                    <div className="project-metrics">
+                      {p.metrics.map((m) => (
+                        <span key={m}>{m}</span>
+                      ))}
+                    </div>
 
-      <div className="project-metrics">
-        <span>JWT Authentication</span>
-        <span>Role-Based Access</span>
-        <span>Secure Transactions</span>
-      </div>
+                    <div className="project-tech">
+                      {p.tech.map((t) => (
+                        <span key={t}>{t}</span>
+                      ))}
+                    </div>
 
-      <div className="project-tech">
-        <span>React</span>
-        <span>Node.js</span>
-        <span>Express.js</span>
-        <span>MongoDB</span>
-        <span>JWT</span>
-      </div>
+                    <div className="project-links">
+                      {p.live && (
+                        <a
+                          href={p.live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="link-live"
+                        >
+                          Live Demo ↗
+                        </a>
+                      )}
+                      {p.code && (
+                        <a href={p.code} target="_blank" rel="noreferrer">
+                          Code
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-      <div className="project-links">
-        <a href="#" target="_blank" rel="noreferrer">Live</a>
-        <a href="#" target="_blank" rel="noreferrer">Code</a>
-      </div>
-    </div>
-
-    {/* Project 2 */}
-    <div className="project-card">
-      <h3>Public Grievance Redressal Portal</h3>
-      <p className="project-desc">
-        Developed a complaint management system enabling users to register, track, and manage grievances with role-based admin workflows.
-      </p>
-
-      <div className="project-metrics">
-        <span>RBAC System</span>
-        <span>REST APIs</span>
-        <span>Status Tracking</span>
-      </div>
-
-      <div className="project-tech">
-        <span>React</span>
-        <span>Node.js</span>
-        <span>Express.js</span>
-        <span>MongoDB</span>
-        <span>JWT</span>
-      </div>
-
-      <div className="project-links">
-        <a href="#" target="_blank" rel="noreferrer">Live</a>
-        <a href="#" target="_blank" rel="noreferrer">Code</a>
-      </div>
-    </div>
-
-    {/* Project 3 */}
-    <div className="project-card">
-      <h3>Sarthi – Campus Community Platform</h3>
-      <p className="project-desc">
-        Developed a full-stack campus platform enabling real-time chat, ride-sharing, and marketplace interactions with scalable architecture.
-      </p>
-
-      <div className="project-metrics">
-        <span>Real-time Chat</span>
-        <span>Google OAuth</span>
-        <span>SPA Architecture</span>
-      </div>
-
-      <div className="project-tech">
-        <span>React</span>
-        <span>Vite</span>
-        <span>Node.js</span>
-        <span>Express.js</span>
-        <span>MongoDB</span>
-        <span>Socket.IO</span>
-      </div>
-
-      <div className="project-links">
-        <a href="#" target="_blank" rel="noreferrer">Live</a>
-        <a href="#" target="_blank" rel="noreferrer">Code</a>
-      </div>
-    </div>
-
-    {/* Project 4 */}
-    <div className="project-card">
-      <h3>Placement Record Management System</h3>
-      <p className="project-desc">
-        Designed and implemented a backend system to manage student placements, company records, and recruitment workflows with efficient data handling.
-      </p>
-
-      <div className="project-metrics">
-        <span>REST API Design</span>
-        <span>Database Modeling</span>
-        <span>CRUD Operations</span>
-      </div>
-
-      <div className="project-tech">
-        <span>Node.js</span>
-        <span>Express.js</span>
-        <span>MongoDB</span>
-        <span>MySQL</span>
-      </div>
-
-      <div className="project-links">
-        <a href="#" target="_blank" rel="noreferrer">Code</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-{/* SKILLS */}
+            {/* SKILLS */}
 <div id="skills" className="resume-section">
   <h2>Technical Skills</h2>
 
   <div className="skills-grid">
+                {skills.map(([title, tags]) => (
+                  <div className="skill-card" key={title}>
+                    <h4>{title}</h4>
+                    <div className="skill-tags">
+                      {tags.map((t) => (
+                        <span key={t}>{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-    <div className="skill-card">
-      <h4>Languages</h4>
-      <div className="skill-tags">
-        <span>JavaScript (ES6+)</span>
-        <span>Java</span>
-        <span>C</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <h4>Frontend</h4>
-      <div className="skill-tags">
-        <span>React.js</span>
-        <span>Vite</span>
-        <span>React Router</span>
-        <span>Context API</span>
-        <span>Responsive Design</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <h4>Backend</h4>
-      <div className="skill-tags">
-        <span>Node.js</span>
-        <span>Express.js</span>
-        <span>REST APIs</span>
-        <span>JWT Authentication</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <h4>Database</h4>
-      <div className="skill-tags">
-        <span>MongoDB</span>
-        <span>Mongoose</span>
-        <span>MySQL</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <h4>Tools</h4>
-      <div className="skill-tags">
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Docker</span>
-        <span>Postman</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <h4>Core Concepts</h4>
-      <div className="skill-tags">
-        <span>OOP</span>
-        <span>API Design</span>
-        <span>Authentication</span>
-        <span>Async Programming</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-            
           </section>
         </div>
       </main>

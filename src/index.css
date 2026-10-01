@@ -302,6 +302,38 @@ body {
   color: #93c5fd;
 }
 
+/* LINKS */
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.project-links a {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  color: #93c5fd;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.project-links a:hover {
+  background: rgba(96, 165, 250, 0.2);
+}
+
+.project-links a.link-live {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+.project-links a.link-live:hover {
+  background: #2563eb;
+}
+
 /* ================= SKILLS ================= */
 
 .skills-grid {
